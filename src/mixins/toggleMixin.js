@@ -10,4 +10,9 @@ export default {
       this.$emit("update:show", false);
     },
   },
+  watch: {
+    show(value) {
+      document.body.style.overflowY = !value ? "scroll" : "hidden";
+    },
+  },
 };

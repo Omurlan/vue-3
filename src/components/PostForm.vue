@@ -3,7 +3,7 @@
     <h3>Post create</h3>
     <my-input v-focus v-model="post.title" type="text" placeholder="Title" />
     <my-input v-model="post.body" type="text" placeholder="Description" />
-    <p class="error" :class="{ active: error }">Заполните поля</p>
+    <p class="error" :class="{ active: error }">All the fields are required</p>
     <my-button @click="createPost" type="submit" class="btn">Create</my-button>
   </form>
 </template>
@@ -58,7 +58,6 @@ form {
 }
 
 .error.active {
-
   opacity: 1;
 }
 </style>
