@@ -3,7 +3,6 @@
     <h1>Post page</h1>
     <my-input
       class="post__search"
-      v-focus
       v-model="searchQuery"
       placeholder="Search"
     />

@@ -2,7 +2,6 @@
   <div>
     <h1>Post page (vuex)</h1>
     <my-input
-      v-focus
       :model-value="searchQuery"
       @update:model-value="setSearchQuery"
       placeholder="Search"

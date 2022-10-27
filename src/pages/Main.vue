@@ -26,11 +26,13 @@
 <script>
 export default {
   data: () => ({
-    renderArrow: true,
+    renderArrow: false,
   }),
   mounted() {
-    if (localStorage.getItem("navbarFooter")) {
-      this.renderArrow = false;
+    if (!localStorage.getItem("navbarFooter")) {
+      setTimeout(() => {
+        this.renderArrow = true;
+      }, 8000);
     }
   },
 };
