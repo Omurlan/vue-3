@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar" :style="{ top: innerHeight - 50 + 'px' }">
+  <div class="navbar">
     <div class="navbar__content container">
       <div class="navbar__btns" @click="hideArrow">
         <router-link class="link-item" to="/posts">Posts</router-link>
@@ -15,23 +15,12 @@
 
 <script>
 export default {
-  data: () => ({
-    innerHeight: 0,
-  }),
   methods: {
     hideArrow() {
       if (!localStorage.getItem("navbarFooter")) {
         localStorage.setItem("navbarFooter", "clicked");
       }
     },
-  },
-  mounted() {
-    this.innerHeight = window.innerHeight;
-    window.addEventListener("resize", () => {
-      if (window.innerHeight !== this.innerHeight) {
-        this.innerHeight = window.innerHeight;
-      }
-    });
   },
 };
 </script>
@@ -41,7 +30,7 @@ export default {
   background: var(--navbar) !important;
   display: none;
   position: fixed;
-  /*bottom: 0;*/
+  bottom: 0;
   left: 0;
   right: 0;
   height: 50px;
